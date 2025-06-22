@@ -2,9 +2,9 @@ name: Run Python Script
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 jobs:
   run-script:
@@ -17,11 +17,11 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.11'
+        python-version: '3.12.3'
 
     - name: Install dependencies (if any)
       run: |
         pip install -r requirements.txt || echo "No requirements.txt found"
 
-    - name: Run Python script
-      run: python script.py
+    - name: Run Python file
+      run: python file.py
